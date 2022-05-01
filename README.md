@@ -41,6 +41,21 @@ go build -o server ./greeter_server
 go build -o client ./greeter_client
 ```
 
+# gRPCurl
+
+Install `gRPCurl` on Mac with `brew install grpcurl`
+
+```
+// list services
+grpcurl --plaintext localhost:50051 list
+
+// describe service
+grpcurl --plaintext localhost:50051 describe helloworld.Greeter
+
+// call method on service
+grpcurl --plaintext localhost:50051 helloworld.Greeter/SayHello
+```
+
 # Extend
 
 Add a new `SayHelloAgain()` method to `helloworld/helloworld.proto`
